@@ -2,11 +2,11 @@ const resultadoInput = document.getElementById('resultado')
 
 function mostrar(valor){
     if (valor === 'igual') {
-        resultadoInput.textContent = aux
-        resultadoInput.value = eval(aux);
+        aux = resultadoInput.value
+        resultadoInput.value = eval(aux)
     } else if (valor === 'reset') {
-        resultadoInput.value = '';
+        resultadoInput.value = ''
     } else {
-        resultadoInput.value += valor;
+        resultadoInput.value += valor
     }
 }
