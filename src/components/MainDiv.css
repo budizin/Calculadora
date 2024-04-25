@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.maindiv{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFA070;
+    background-image: linear-gradient(315deg, #FFA070 0%, #D6725D 74%);  
+}
