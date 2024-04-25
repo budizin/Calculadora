@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>test</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <table class="calculadora">
+        <tr>
+            <td colspan="4"><span id="resultado"></span></td>
+        </tr>
+        <tr>
+            <td><button id="siete" onclick="mostrar('siete')"></button></td>
+            <td><button id="ocho" onclick="mostrar('ocho')"></button></td>
+            <td><button id="nueve" onclick="mostrar('nueve')"></button></td>
+            <td><button id="division" onclick="mostrar('/')"></button></td>
+        </tr>
+        <tr>
+            <td><button id="cuatro" onclick="mostrar('cuatro')"></button></td>
+            <td><button id="cinco" onclick="mostrar('cinco')"></button></td>
+            <td><button id="seis" onclick="mostrar('seis')"></button></td>
+            <td><button id="multiplicacion" onclick="mostrar('*')"></button></td>
+        </tr>
+        <tr>
+            <td><button id="uno" onclick="mostrar('uno')"></button></td>
+            <td><button id="dos" onclick="mostrar('dos')"></button></td>
+            <td><button id="tres" onclick="mostrar('tres')"></button></td>
+            <td><button id="resta" onclick="mostrar('-')"></button></td>
+        </tr>
+        <tr>
+            <td><button id="igual" onclick="mostrar('igual')"></button></td>
+            <td><button id="reset" onclick="mostrar('reset')"></button></td>
+            <td><button id="cero" onclick="mostrar('cero')"></button></td>
+            <td><button id="suma" onclick="mostrar('+')"></button></td>
+        </tr>    
+        
+
+        </table>
+        <script src="codigo.js" async defer></script>
+    </body>
+</html>
