@@ -5,15 +5,28 @@ import Screen from './Screen';
 const Buttons = () => {
   const [currentValue, setCurrentValue] = useState('');
   const [numbersArray, setNumbersArray] = useState([]);
+  const operators = ["+", "/", "-", "*", '.']; 
 
   const handleButtonClick = (event) => {
     const buttonText = event.target.innerText;
+    let modifiedButtonText = buttonText; 
+
     if (buttonText === '=') {
       if (numbersArray.length > 0){
-      let res = eval(currentValue)
-      let resString = res.toString()
-      setCurrentValue(resString)
-      setNumbersArray(resString.split(''))
+        if (!operators.includes(numbersArray[numbersArray.length - 1])){
+          let res = eval(currentValue)
+          let resString = res.toString()
+          if (resString.length >= 12) {
+            resString = resString.slice(0, 12) + '...';
+            console.log(currentValue)
+            console.log(numbersArray)  
+          }
+          setCurrentValue(resString)
+          setNumbersArray(resString.split(''))
+          console.log(currentValue)
+          console.log(numbersArray)
+
+        }
     }
     }
     else if (buttonText === 'Ce') {
@@ -27,10 +40,13 @@ const Buttons = () => {
         }
       }
     } else if (['+', '-', '×', '÷'].includes(buttonText)) {
-      if (numbersArray.length === 0 || !['+', '-', '×', '÷'].includes(numbersArray[numbersArray.length - 1])) {
+      modifiedButtonText = buttonText === '×' ? '*' : modifiedButtonText;
+      modifiedButtonText = buttonText === '÷' ? '/' : modifiedButtonText;
+
+      if (numbersArray.length === 0 || !['+', '-', '*', '/'].includes(numbersArray[numbersArray.length - 1])) {
         if (currentValue.length < 14) {
-          setCurrentValue(prevValue => prevValue + buttonText);
-          setNumbersArray(prevArray => [...prevArray, buttonText]);
+          setCurrentValue(prevValue => prevValue + modifiedButtonText);
+          setNumbersArray(prevArray => [...prevArray, modifiedButtonText]);
         }
       }
     }
